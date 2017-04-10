@@ -4,38 +4,34 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-    <!--获取application中配置-->
-    <properties resource = "application.properties" />
-
-    <context id="LocationMySQL" targetRuntime="MyBatis3">
+      <context id="HSQL" targetRuntime="MyBatis3">
         <property name="autoDelimitKeywords" value="true" />
         <property name="beginningDelimiter" value="`" />
         <property name="endingDelimiter" value="`" />
 
 
-        <jdbcConnection driverClass="${spring.datasource.driver-class-name}"
-                        connectionURL="${spring.datasource.url}"
-                        userId="${spring.datasource.username}"
-                        password="${spring.datasource.password}">
-        </jdbcConnection>
-        <javaModelGenerator targetPackage="cn.mobilemd.pv.entity" targetProject="src/main/java">
+        <jdbcConnection driverClass="org.hsqldb.jdbcDriver"
+                                         connectionURL="jdbc:hsqldb:mem:world"
+                                         userId="sa"
+                                         password="">
+      </jdbcConnection>
+        <javaModelGenerator targetPackage="com.github.zackwoo.scaffolding.entity" targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
-        <sqlMapGenerator targetPackage="cn.mobilemd.pv.mapper"
+        <sqlMapGenerator targetPackage="com.github.zackwoo.scaffolding.mapper"
                          targetProject="src/main/resources">
         </sqlMapGenerator>
-        <javaClientGenerator targetPackage="cn.mobilemd.pv.mapper"
+        <javaClientGenerator targetPackage="com.github.zackwoo.scaffolding.mapper"
                              targetProject="src/main/java" type="XMLMAPPER">
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
 
 
+          <table tableName="city"></table>
+          <table tableName="country"></table>
+          <table tableName="countrylanguage"></table>
 
-        <table tableName="report_settings">
-            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
-        </table>
-        <table tableName="pv_baselinelisting"></table>
-        <table tableName="role"></table>
+
     </context>
 </generatorConfiguration>
