@@ -23,7 +23,7 @@ public class CityController {
 
     @ApiOperation(value = "根据国家编号查城市列表", notes = "pageNum从1开始")
     @GetMapping("cityByCountryCode")
-    public PageInfo<CityDto> cityByCountryCode(@RequestParam String code ,@RequestParam int pageNum,@RequestParam int pageSize){
+    public PageInfo cityByCountryCode(@RequestParam String code ,@RequestParam int pageNum,@RequestParam int pageSize){
         return  _service.queryCityByCountryCode(code,pageNum,pageSize);
     }
 }

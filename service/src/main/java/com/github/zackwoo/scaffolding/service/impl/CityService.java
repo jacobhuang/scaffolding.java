@@ -21,7 +21,7 @@ public class CityService implements ICityService {
     @Autowired
     private CityMapper _cityMapper;
 
-    public PageInfo<CityDto> queryCityByCountryCode(String code, int pageNumber, int pageSize) {
+    public PageInfo queryCityByCountryCode(String code, int pageNumber, int pageSize) {
         CityExample cityExample = new CityExample();
         cityExample.createCriteria().andCountrycodeEqualTo(code);
         PageHelper.startPage(pageNumber,pageSize);//设置分页信息
