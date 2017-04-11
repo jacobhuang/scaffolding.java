@@ -39,7 +39,7 @@
                     <!--重写已经存在的文件-->
                     <overwrite>true</overwrite>
                     <!--初始化脚本-->
-                   <sqlScript>C:\Users\zack.wu\Desktop\scaffolding\dal\src\main\resources\database\hsqldb-schema.sql</sqlScript>
+                   <sqlScript>C:\Users\zack.wu\Desktop\scaffolding\war\src\main\resources\schema.sql</sqlScript>
                     <jdbcDriver>org.hsqldb.jdbcDriver</jdbcDriver>
                     <jdbcURL>jdbc:hsqldb:mem:world</jdbcURL>
                 </configuration>
