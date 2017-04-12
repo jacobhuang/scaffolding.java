@@ -2,11 +2,9 @@ package com.github.zackwoo.scaffolding.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.github.zackwoo.scaffolding.common.dto.PageBean;
 import com.github.zackwoo.scaffolding.entity.City;
 import com.github.zackwoo.scaffolding.entity.CityExample;
 import com.github.zackwoo.scaffolding.mapper.CityMapper;
-import com.github.zackwoo.scaffolding.service.dto.CityDto;
 import com.github.zackwoo.scaffolding.service.interfaces.ICityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
