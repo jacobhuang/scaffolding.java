@@ -9,7 +9,7 @@
         <!--<property name="beginningDelimiter" value="`" />-->
         <!--<property name="endingDelimiter" value="`" />-->
 
-
+          <plugin type="com.github.mybatis.plugin.TestPlugin"/>
         <jdbcConnection driverClass="org.hsqldb.jdbcDriver"
                                          connectionURL="jdbc:hsqldb:mem:world"
                                          userId="sa"

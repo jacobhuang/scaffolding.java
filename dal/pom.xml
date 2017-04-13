@@ -39,7 +39,7 @@
                     <!--重写已经存在的文件-->
                     <overwrite>true</overwrite>
                     <!--初始化脚本-->
-                   <sqlScript>C:\Users\zack.wu\Desktop\scaffolding\war\src\main\resources\schema.sql</sqlScript>
+                   <sqlScript>/Users/zachary/scaffolding.java/war/src/main/resources/schema.sql</sqlScript>
                     <jdbcDriver>org.hsqldb.jdbcDriver</jdbcDriver>
                     <jdbcURL>jdbc:hsqldb:mem:world</jdbcURL>
                 </configuration>
@@ -49,6 +49,11 @@
                         <groupId>org.hsqldb</groupId>
                         <artifactId>hsqldb</artifactId>
                         <version>2.3.4</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.github.zackwoo.scaffolding</groupId>
+                        <artifactId>mybatis-plugin</artifactId>
+                        <version>1.0.0</version>
                     </dependency>
                 </dependencies>
             </plugin>

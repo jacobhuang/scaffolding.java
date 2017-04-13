@@ -1,7 +1,6 @@
 package com.github.zackwoo.scaffolding.service.interfaces;
 
 import com.github.pagehelper.PageInfo;
-import com.github.zackwoo.scaffolding.common.dto.PageBean;
 import com.github.zackwoo.scaffolding.service.dto.CityDto;
 
 import java.util.List;

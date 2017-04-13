@@ -11,7 +11,7 @@
         <module>../war</module>
         <module>../service</module>
         <module>../controller</module>
-        <module>../common</module>
+        <module>../mybatis-plugin</module>
     </modules>
     <packaging>pom</packaging>
 
