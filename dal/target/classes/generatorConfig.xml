@@ -5,9 +5,9 @@
 
 <generatorConfiguration>
       <context id="HSQL" targetRuntime="MyBatis3">
-        <property name="autoDelimitKeywords" value="true" />
-        <property name="beginningDelimiter" value="`" />
-        <property name="endingDelimiter" value="`" />
+        <!--<property name="autoDelimitKeywords" value="true" />-->
+        <!--<property name="beginningDelimiter" value="`" />-->
+        <!--<property name="endingDelimiter" value="`" />-->
 
 
         <jdbcConnection driverClass="org.hsqldb.jdbcDriver"

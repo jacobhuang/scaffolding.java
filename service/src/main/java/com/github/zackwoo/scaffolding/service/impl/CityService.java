@@ -2,11 +2,9 @@ package com.github.zackwoo.scaffolding.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.github.zackwoo.scaffolding.common.dto.PageBean;
 import com.github.zackwoo.scaffolding.entity.City;
 import com.github.zackwoo.scaffolding.entity.CityExample;
 import com.github.zackwoo.scaffolding.mapper.CityMapper;
-import com.github.zackwoo.scaffolding.service.dto.CityDto;
 import com.github.zackwoo.scaffolding.service.interfaces.ICityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -21,9 +19,10 @@ public class CityService implements ICityService {
     @Autowired
     private CityMapper _cityMapper;
 
-    public PageInfo<CityDto> queryCityByCountryCode(String code, int pageNumber, int pageSize) {
+    public PageInfo queryCityByCountryCode(String code, int pageNumber, int pageSize) {
         CityExample cityExample = new CityExample();
         cityExample.createCriteria().andCountrycodeEqualTo(code);
+
         PageHelper.startPage(pageNumber,pageSize);//设置分页信息
         List<City> cities = _cityMapper.selectByExample(cityExample);
        return new PageInfo(cities); // 获取分页信息
