@@ -26,7 +26,7 @@
                 <!--mybatis 代码生成maven插件配置-->
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
-                <version>1.3.5</version>
+                <version>1.3.4</version>
                 <executions>
                     <execution>
                         <id>Generate MyBatis Artifacts</id>
@@ -39,7 +39,8 @@
                     <!--重写已经存在的文件-->
                     <overwrite>true</overwrite>
                     <!--初始化脚本-->
-                   <sqlScript>/Users/zachary/scaffolding.java/war/src/main/resources/schema.sql</sqlScript>
+                    <!--<sqlScript>/Users/zachary/scaffolding.java/war/src/main/resources/schema.sql</sqlScript>-->
+                    <sqlScript>C:\Users\zack.wu\Desktop\scaffolding\war\src\main\resources\schema.sql</sqlScript>
                     <jdbcDriver>org.hsqldb.jdbcDriver</jdbcDriver>
                     <jdbcURL>jdbc:hsqldb:mem:world</jdbcURL>
                 </configuration>

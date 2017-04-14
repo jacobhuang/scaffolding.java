@@ -9,9 +9,9 @@
         <relativePath>../parent/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>mybatis-plugin</artifactId>
     <version>1.0.0</version>
+    <packaging>jar</packaging>
     <dependencies>
         <dependency>
             <groupId>org.mybatis.generator</groupId>
@@ -20,5 +20,23 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>2.5.2</version>
+                <configuration>
+                    <file>${project.build.directory}\${project.artifactId}-${project.version}.jar</file>
+                    <repositoryLayout>default</repositoryLayout>
+                    <groupId>${project.groupId}</groupId>
+                    <artifactId>${project.artifactId}</artifactId>
+                    <packaging>jar</packaging>
+                    <version>${project.version}</version>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
 
 </project>

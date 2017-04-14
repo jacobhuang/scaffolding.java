@@ -18,12 +18,19 @@ public class TestPlugin extends PluginAdapter {
     @Override
     public boolean clientGenerated(Interface interfaze, TopLevelClass topLevelClass, IntrospectedTable introspectedTable) {
         super.clientGenerated(interfaze, topLevelClass, introspectedTable);
-        interfaze.addFileCommentLine("注释测试");
         Method method = new Method();
         method.setName("selectByMap");
         method.setVisibility(JavaVisibility.PUBLIC);
-        method.setReturnType(FullyQualifiedJavaType.getNewListInstance());
+        FullyQualifiedJavaType fullyQualifiedJavaType = FullyQualifiedJavaType.getNewListInstance();
+        fullyQualifiedJavaType.addTypeArgument(new FullyQualifiedJavaType(introspectedTable.getBaseRecordType()));
+        method.setReturnType(fullyQualifiedJavaType);
+        Parameter parameter = new Parameter(FullyQualifiedJavaType.getNewMapInstance(),"map");
+        method.addParameter(parameter);
         interfaze.addMethod(method);
+
+        context.getCommentGenerator()
+                .addGeneralMethodComment(method,introspectedTable);
+
         return true;
     }
 }
