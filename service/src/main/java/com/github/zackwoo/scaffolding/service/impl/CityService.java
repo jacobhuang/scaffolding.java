@@ -23,6 +23,7 @@ public class CityService implements ICityService {
         CityExample cityExample = new CityExample();
         cityExample.createCriteria().andCountrycodeEqualTo(code);
 
+
         PageHelper.startPage(pageNumber,pageSize);//设置分页信息
         List<City> cities = _cityMapper.selectByExample(cityExample);
        return new PageInfo(cities); // 获取分页信息
